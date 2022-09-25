@@ -3,5 +3,9 @@
 
 typedef struct binary_tree binary_tree;
 
+int is_empty(binary_tree *bt);
+binary_tree *create_binary_tree();
+binary_tree *add_root(int elem, binary_tree *bt);
+void print_binary_tree (binary_tree *bt);
 
 #endif
