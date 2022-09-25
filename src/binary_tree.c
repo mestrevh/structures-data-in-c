@@ -19,7 +19,7 @@ binary_tree *create_binary_tree()
     return NULL;
 }
 
-binary_tree *add_root(int elem, binary_tree *bt)
+binary_tree *root_tree(int elem, binary_tree *bt)
 {
     binary_tree *new_root = (binary_tree *) malloc(sizeof(binary_tree));
 
@@ -40,6 +40,6 @@ void print_binary_tree (binary_tree *bt)
 {
     if (is_empty(bt))
         return;
-        
+
     printf("elem: %d\n", bt->elem);
 }
