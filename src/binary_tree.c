@@ -63,3 +63,21 @@ void print_binary_tree (bt *root)
         printf(")");
     }
 }
+
+int search (bt *root, int elem)
+{
+    if (is_empty(root))
+        return 0;
+
+    if (root->elem == elem)
+        return 1;
+    
+    if (elem > root->elem)
+    {
+        return search(root->r, elem);
+    }
+    else
+    {
+        return search(root->l, elem);
+    }
+}

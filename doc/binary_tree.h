@@ -7,5 +7,6 @@ int is_empty(bt *root);
 bt *create_binary_tree();
 bt *insert(bt *root, int elem);
 void print_binary_tree (bt *root);
+int search (bt *root, int elem);
 
 #endif
