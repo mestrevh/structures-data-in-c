@@ -7,11 +7,16 @@ int main ()
 {
     hello_world();
 
-    binary_tree *bt = create_binary_tree();
-    bt = root_tree(10, bt);
-
-    if (!is_empty(bt))
-        print_binary_tree(bt);
+    bt *root = create_binary_tree();
+    root = insert(root, 10);
+    root = insert(root, 11);
+    root = insert(root, 12);
+    root = insert(root, 10);
+    root = insert(root, 9);
+    root = insert(root, 9);
+    root = insert(root, 8);
+    print_binary_tree(root);
+    printf("\n");
 
     return 0;
 }
