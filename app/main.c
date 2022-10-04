@@ -259,6 +259,45 @@ void loop_binary_tree(bt *root)
     }
 }
 
+void loop_tree(bt *root)
+{
+    int op;
+
+    while (1)
+    {
+        printf("\nArvore nao binaria opcoes:\n\n");
+        printf("1 - Adicionar;\n");
+        printf("2 - Remover;\n");
+        printf("3 - Pertence;\n");
+        printf("4 - Imprimir;\n");
+        printf("0 - Sair;\n");
+        printf("\nEscolha uma opcao: ");
+        scanf("%d", &op);
+
+        switch (op)
+        {
+            case 1:        
+                printf("Falta\n");
+                break;
+            case 2:
+                printf("Falta\n");
+                break;
+            case 3:
+                printf("Falta\n");
+                break;
+            case 4: 
+                printf("Falta\n");
+                break;
+            case 0:
+                printf("\n######################   Fim da sessao arvore binaria   ##################\n");
+                return;
+            default:
+                printf("Digite uma opcao valida\n");
+                break;
+        }
+    }
+}
+
 int main ()
 {
 
@@ -271,6 +310,7 @@ int main ()
         printf("2 - Pilha;\n");
         printf("3 - Fila;\n");
         printf("4 - Arvore binaria;\n");
+        printf("5 - Arvore nao binaria;\n");
         printf("0 - Sair.\n");
         printf("\nEscolha uma estrutura: ");
 
@@ -289,6 +329,9 @@ int main ()
                 break;
             case 4:
                 loop_binary_tree(NULL);
+                break;
+            case 5:
+                loop_tree(NULL);
                 break;
             case 0:
                 printf("\n#######       TCHAUUU        ########\n");
