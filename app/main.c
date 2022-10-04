@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "binary_tree.h"
 #include "list.h"
+#include "stack.h"
 
 void loop_list(node *list)
 {
@@ -66,6 +67,65 @@ void loop_list(node *list)
             case 4: 
                 
                 print_list(list);
+                printf("\n");
+
+                break;
+            case 0:
+                printf("\n######################   Fim da sessao lista   ##################\n");
+                return;
+            default:
+                printf("Digite uma opcao valida\n");
+                break;
+        }
+    }
+}
+
+void loop_stack (stack *s)
+{
+
+    int op;
+
+    while (1)
+    {
+        printf("\nPilha opcoes:\n\n");
+        printf("1 - Empilhar;\n");
+        printf("2 - Desempilhar;\n");
+        printf("3 - Topo;\n");
+        printf("4 - Imprimir;\n");
+        printf("0 - Sair;\n");
+        printf("\nEscolha uma opcao: ");
+        scanf("%d", &op);
+
+        switch (op)
+        {
+            case 1:        
+                
+                int elem;
+                printf("Digite um numero inteiro: ");
+                scanf("%d", &elem);
+
+                s = push(s, elem);
+                print_stack(s);
+                printf("\n");
+
+                break;
+            
+            case 2:
+
+                s = pop(s);
+                print_stack(s);
+                printf("\n");
+
+                break;
+            case 3:
+                
+                peek(s);
+                printf("\n");
+
+                break;
+            case 4: 
+                
+                print_stack(s);
                 printf("\n");
 
                 break;
@@ -170,7 +230,7 @@ int main ()
                 loop_list(NULL);
                 break;
             case 2:
-                //loop_stack(NULL);
+                loop_stack(NULL);
                 break;
             case 3:
                 //loop_queue(NULL);

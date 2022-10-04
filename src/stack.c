@@ -14,11 +14,61 @@ int is_empty_stack (stack *s)
     return (int) (s == NULL);
 }
 
-stack *push (stack *s, int elem)
+stack *push(stack *s, int elem)
 {
     stack *new_stack = (stack *) malloc(sizeof(stack));
     new_stack->elem = elem;
     new_stack->next = s;
 
     return new_stack;
+}
+
+stack *pop(stack *s)
+{
+    if (is_empty_stack(s))
+    {
+        printf("\nPilha vaiza!\n");
+    }
+    else
+    {
+        stack *current = s;
+
+        s = s->next;
+
+        current->next = NULL;
+
+        printf("Desempilhando: %d\n", current->elem);
+        free(current);
+    }
+
+    return s;
+}
+
+void peek (stack *s)
+{
+    if (is_empty_stack(s))
+    {
+        printf("\nPilha vaiza!\n");
+    }
+    else
+    {
+        printf("\nTopo: %d\n", s->elem);
+    }
+}
+
+void print_stack (stack *s)
+{
+    while (!is_empty_stack(s))
+    {
+        if (is_empty_stack(s->next))
+        {
+            printf("%d\n", s->elem);
+        }
+        else
+        {
+            printf("%d ", s->elem);
+        }
+
+        s = s->next;
+    }
 }
