@@ -17,6 +17,13 @@ int is_empty_stack (stack *s)
 stack *push(stack *s, int elem)
 {
     stack *new_stack = (stack *) malloc(sizeof(stack));
+    
+    if (is_empty_stack(new_stack))
+    {
+        printf("\nFalta de memoria\n");
+        exit(1);
+    }
+    
     new_stack->elem = elem;
     new_stack->next = s;
 

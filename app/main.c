@@ -3,6 +3,7 @@
 #include "binary_tree.h"
 #include "list.h"
 #include "stack.h"
+#include "queue.h"
 
 void loop_list(node *list)
 {
@@ -139,6 +140,57 @@ void loop_stack (stack *s)
     }
 }
 
+void loop_queue (queue *q)
+{
+
+    int op;
+
+    while (1)
+    {
+        printf("\nPilha opcoes:\n\n");
+        printf("1 - Enfileirar;\n");
+        printf("2 - Desenfileirar;\n");
+        printf("3 - Imprimir;\n");
+        printf("0 - Sair;\n");
+        printf("\nEscolha uma opcao: ");
+        scanf("%d", &op);
+
+        switch (op)
+        {
+            case 1:        
+                
+                int elem;
+                printf("Digite um numero inteiro: ");
+                scanf("%d", &elem);
+
+                q = enqueue(q, elem);
+                print_queue(q);
+                printf("\n");
+
+                break;
+            
+            case 2:
+
+                q = dequeue(q);
+                print_queue(q);
+                printf("\n");
+
+                break;
+            case 3: 
+                
+                print_queue(q);
+                printf("\n");
+
+                break;
+            case 0:
+                printf("\n######################   Fim da sessao lista   ##################\n");
+                return;
+            default:
+                printf("Digite uma opcao valida\n");
+                break;
+        }
+    }
+}
 
 void loop_binary_tree(bt *root)
 {
@@ -233,7 +285,7 @@ int main ()
                 loop_stack(NULL);
                 break;
             case 3:
-                //loop_queue(NULL);
+                loop_queue(NULL);
                 break;
             case 4:
                 loop_binary_tree(NULL);

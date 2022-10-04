@@ -9,7 +9,8 @@ all: clean folders libed myapps
 libed: \
 	$(OBJ)/binary_tree.o \
 	$(OBJ)/list.o \
-	$(OBJ)/stack.o
+	$(OBJ)/stack.o \
+	$(OBJ)/queue.o
 
 myapps: \
 	$(BIN)/main
