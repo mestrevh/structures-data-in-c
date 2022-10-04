@@ -2,6 +2,9 @@
 #define STACK_H
 
 typedef struct stack stack;
-
+int is_empty_stack(stack *s);
+stack *push(stack *s);
+stack *pop(stack *s);
+int peek(stack *s);
 
 #endif
