@@ -9,7 +9,7 @@ typedef struct binary_tree
     bt *r;
 } bt;
 
-int is_empty(bt *root)
+int is_empty_binary_tree(bt *root)
 {
     return (int) (root == NULL);
 }
@@ -19,13 +19,13 @@ bt *create_binary_tree()
     return NULL;
 }
 
-bt *insert(bt *root, int elem)
+bt *insert_binary_tree(bt *root, int elem)
 {
-    if (is_empty(root))
+    if (is_empty_binary_tree(root))
     {
         bt *new_root = (bt *) malloc(sizeof(bt));
 
-        if (is_empty(new_root))
+        if (is_empty_binary_tree(new_root))
         {
             printf("Erro: Falta de memória\n");
             exit(1);
@@ -38,11 +38,11 @@ bt *insert(bt *root, int elem)
 
     if (elem >= root->elem)
     {
-        root->r = insert(root->r, elem);
+        root->r = insert_binary_tree(root->r, elem);
     }
     else
     {
-        root->l = insert(root->l, elem);
+        root->l = insert_binary_tree(root->l, elem);
     }
 
     return root;
@@ -50,7 +50,7 @@ bt *insert(bt *root, int elem)
 
 void print_binary_tree (bt *root)
 {
-    if (is_empty(root))
+    if (is_empty_binary_tree(root))
     {
         printf("()");
     }
@@ -64,9 +64,9 @@ void print_binary_tree (bt *root)
     }
 }
 
-int search (bt *root, int elem)
+int search_binary_tree (bt *root, int elem)
 {
-    if (is_empty(root))
+    if (is_empty_binary_tree(root))
         return 0;
 
     if (root->elem == elem)
@@ -74,10 +74,10 @@ int search (bt *root, int elem)
     
     if (elem > root->elem)
     {
-        return search(root->r, elem);
+        return search_binary_tree(root->r, elem);
     }
     else
     {
-        return search(root->l, elem);
+        return search_binary_tree(root->l, elem);
     }
 }

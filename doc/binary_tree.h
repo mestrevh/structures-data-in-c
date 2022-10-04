@@ -3,10 +3,10 @@
 
 typedef struct binary_tree bt;
 
-int is_empty(bt *root);
+int is_empty_binary_tree(bt *root);
 bt *create_binary_tree();
-bt *insert(bt *root, int elem);
+bt *insert_binary_tree(bt *root, int elem);
 void print_binary_tree (bt *root);
-int search (bt *root, int elem);
+int search_binary_tree(bt *root, int elem);
 
 #endif

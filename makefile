@@ -7,7 +7,8 @@ SRC = ./src
 all: clean folders libed myapps
 
 libed: \
-	$(OBJ)/binary_tree.o
+	$(OBJ)/binary_tree.o \
+	$(OBJ)/list.o
 
 myapps: \
 	$(BIN)/main
