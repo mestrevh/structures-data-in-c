@@ -81,3 +81,69 @@ int search_binary_tree (bt *root, int elem)
         return search_binary_tree(root->l, elem);
     }
 }
+
+bt *remove_binary_tree(bt *root, int elem)
+{
+    if (is_empty_binary_tree(root))
+    {
+        return NULL;
+    }
+    else
+    {
+        if (root->elem == elem)
+        {
+            if (root->l == NULL && root->r == NULL)
+            {
+                free(root);
+                return NULL;
+            }
+            else
+            {
+                if (root->l == NULL || root->r == NULL)
+                {
+                    bt *aux;
+
+                    if (root->l == NULL)
+                    {
+                        aux = root->r;
+                    }
+                    else
+                    {
+                        aux = root->l;
+                    }
+
+                    free(root);
+                    return aux;
+                }
+                else
+                {
+                    //primeiro para esquerda depois para o ultimo a direita
+                    bt *aux = root->l;
+
+                    while (!is_empty_binary_tree(aux->r))
+                        aux = aux->r;
+                    
+                    root->elem = aux->elem;
+                    aux->elem = elem;
+                    root->l = remove_binary_tree(root->l, elem);
+                    
+                    return root;
+                }
+                
+            }
+        }
+        else
+        {
+            if (elem > root->elem)
+            {
+                root->r = remove_binary_tree(root->r, elem);
+            }
+            else
+            {
+                root->l = remove_binary_tree(root->l, elem);
+            }
+        }
+
+        return root;
+    }
+}

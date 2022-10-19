@@ -222,7 +222,13 @@ void loop_binary_tree(bt *root)
                 break;
             
             case 2:
-                printf("Nao implementado ainda\n");
+                int rm;
+                printf("Digite um numero inteiro: ");
+                scanf("%d", &rm);
+
+                root = remove_binary_tree(root, rm);
+                print_binary_tree(root);
+                printf("\n");
                 break;
             case 3:
 
